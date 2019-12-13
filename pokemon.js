@@ -1,5 +1,5 @@
 
-const pokeApi = () => {
+function pokeApi() {
     //To randomize the pokemon for first half of project
     const random = Math.floor(Math.random() * 150) + 1  ;
     //It is much easier if under a const
@@ -22,10 +22,15 @@ const pokeApi = () => {
                 type: data.types.map( type => type.type.name).join(', '),
                 ability: data.abilities.map( abilities => abilities.ability.name).join(', ')
             }
+            
             display(baseData);
             displayTwo(baseData);
         })
+
+        
 };
+
+//this display the pokemon info at the top
 
 const pokemonInfo = document.getElementById('pokemon-info');
  const display = (data) => {
@@ -49,7 +54,14 @@ const pokemonInfo = document.getElementById('pokemon-info');
  }
 
 pokeApi();
+
+
+// batlle info here
+
+
 const battlerTwo = document.getElementById('challenger-one-info');
+
+//dis displays the first pokemon image data above
 const displayTwo = (data) => {
     const html = 
         ` 
@@ -58,11 +70,14 @@ const displayTwo = (data) => {
     battlerTwo.innerHTML = html;
  }
 
-// Now for the battle.
+
 // Idea #1: to copy the first api function and make it random to challenger and
 // based on type to send an alert of who won.
 
-const theChallenger = () => {
+//challenger info against first pokemon
+
+
+function theChallenger() {
     const challenger = Math.floor(Math.random() * 150) + 1  ;
     const url = `https://pokeapi.co/api/v2/pokemon/${challenger}`;
     fetch(url)
@@ -83,6 +98,8 @@ const theChallenger = () => {
 };
 
 const battlerOne = document.getElementById('challenger-two-info');
+
+// this displays the new challenger info
 const displayBattle = (data) => {
    const html = 
        ` 
@@ -99,13 +116,17 @@ const displayBattle = (data) => {
    battlerOne.innerHTML = html;
 }
 
-const one = pokeApi();
-const two = theChallenger();
 
-console.log(one);
+//battle function
 
-const battle = (one, two) => {
-    window.alert('Make them battle!');
+function battle(one, two){
+
+    if( one > two){
+        return window.alert(`${one}, wins the battle! ${two} FAINTS!`);
+    } else {
+       return window.alert(`${two}, wins the battle! ${one} FAINTS!`);
+    }
+   
 }
 
 theChallenger();
