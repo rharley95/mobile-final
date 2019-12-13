@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+body {
+margin: 0;
+}
+
+
+h1, h2 {
+    margin-top: 50px;
+    text-align: center;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 3em;
+}
+
+nav {
+    background-color: red;
+    width: 100%;
+    position: fixed;
+    height: 50px;
+    line-height: 50px;
+    left: 0;
+    top: 0;
+    text-align: center;
+}
+
+nav img {
+    margin-top: 5px;
+}
+
+#pokemon-info {
+    width: 80%;
+    margin: 30px auto;
+    text-align: left;
+    padding: 10px;
+
+}
+
+#pokemon-info img {
+    background-color: #DBFCFF;
+    border: 1px #A6CFD5 solid;
+    border-radius: 2px;
+}
+
+#challenger-one-info img {
+    background-color: #DBFCFF;
+    border: 1px #A6CFD5 solid;
+    border-radius: 2px;
+}
+
+#challenger-two-info img {
+    background-color: #FA7D82;
+    border: 1px #F8333C solid;
+    border-radius: 2px;
+}
+
+.image {
+    min-width: 250px;
+    display: block;
+    margin: 0 auto;
+
+}
+
+.info {
+    margin-top: 10px;
+    border: 1px #A6CFD5 solid;
+    border-radius: 2px;
+}
+
+.info ul {
+    padding: 12px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.info ul li {
+    margin-bottom: 15px;
+}
+
+span {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 20px;  
+}
+
+button {
+    border: #000 2px solid;
+    border-radius: 5px;
+    height: 50px;
+    width: 300px;
+    display: block;
+    margin: 30px auto;
+    background-color: #DD4F5D;
+    font-size: 20px;
+    color: white;
+}
+
+#challenger-two-info {
+    width: 70%;
+    margin: 0 auto;
+}
+
+hr {
+    margin-bottom: 35px;
+}
