@@ -1,3 +1,6 @@
+let baseData;
+let challenger;
+
 
 function pokeApi() {
     //To randomize the pokemon for first half of project
@@ -12,7 +15,7 @@ function pokeApi() {
         // promise number 2 this is where I get stuck and seek resources AND IT IS AWESOME BECAUSE NOW I UNDERSTAND that you have to follow the data from the API by documentation to map it out
         .then( data => {
             // let's see if this works.
-            const baseData = {
+            baseData = {
                 name: data.name.toUpperCase(),
                 id: data.id,
                 image: data.sprites['front_default'],
@@ -78,21 +81,21 @@ const displayTwo = (data) => {
 
 
 function theChallenger() {
-    const challenger = Math.floor(Math.random() * 150) + 1  ;
-    const url = `https://pokeapi.co/api/v2/pokemon/${challenger}`;
+    const challenge = Math.floor(Math.random() * 150) + 1  ;
+    const url = `https://pokeapi.co/api/v2/pokemon/${challenge}`;
     fetch(url)
         .then( e => {
             return e.json();
         })
         .then( data => {
-            const challenge = {
+            challenger = {
                 id: data.id,
                 name: data.name.toUpperCase(),
                 image: data.sprites['front_default'],
                 experience: data.base_experience,
                 type: data.types.map( type => type.type.name).join(', '),
             }
-            displayBattle(challenge);
+            displayBattle(challenger);
         })
        
 };
@@ -121,10 +124,10 @@ const displayBattle = (data) => {
 
 function battle(one, two){
 
-    if( one > two){
-        return window.alert(`${one}, wins the battle! ${two} FAINTS!`);
+    if( one.experience > two.experience){
+        return window.alert(`${one.name}, wins the battle! ${two.name} FAINTS!`);
     } else {
-       return window.alert(`${two}, wins the battle! ${one} FAINTS!`);
+       return window.alert(`${two.name}, wins the battle! ${one.name} FAINTS!`);
     }
    
 }
